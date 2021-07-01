@@ -19,13 +19,15 @@ def new_game():
     p2_atk = 0
     
     while True:
-        if p1_hp <= 0 or p2_hp <= 0:
+        # 看有沒有人血量歸零
+        if p1_hp <= 0 or p2_hp <= 0: 
             break
         
+        # 因為攻擊是一組一組的，在第一個檢查有沒有stop就好
         trun_to = input()
         if trun_to == 'stop':
             break
-        skill_atk = get_skill_attack_power(input()) 
+        skill_atk = get_skill_attack_power(input()) #取得輸入的技能的攻擊力
         
         
         # 攻擊
@@ -54,8 +56,6 @@ def new_game():
     # 印最終兩人HP
     print("Player1 HP: " + str(p1_hp))        
     print("Player2 HP: " + str(p2_hp))       
-
-
 
 
 
